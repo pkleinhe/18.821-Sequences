@@ -1,0 +1,103 @@
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage[margin=0.9in]{geometry}
+%\usepackage{amsfonts}
+%\usepackage{amsthm}
+\usepackage{subfigure}
+\usepackage{mathtools}
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{url}
+\urlstyle{same}
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\makeatletter
+\let\c@lemma=\c@theorem
+\let\c@corollary=\c@theorem
+\let\c@fact=\c@theorem
+\makeatother
+
+\let\realendproof=\endproof
+\def\endproof{\hspace*{\fill}$\Box$\realendproof}
+\title{Self Referencing Sequences}
+\author{Perry Kleinhenz, Fermi Ma and Erik Waingarten}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+
+\title{Self Referencing Sequences}
+\titlerunning{Self Referencing Sequences}
+
+\author{Perry Kleinhenz \and Fermi Ma \and Erik Waingarten}
+%
+\authorrunning{Perry Kleinhenz \and Fermi Ma \and Erik Waingarten}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{
+\protect\url{{pkleinhe, fermima,eaw}@mit.edu}}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Definitions and Notations}
+In this section we introduce 
+
+
+\section{Prefixes}
+\emph{Written by Perry Kleinhenz, edited by Fermi Ma and Erik Waingarten}
+\begin{definition} We say that two sequences $\{a_i\}$ and $\{b_i\}$ differ by a prefix of length $n$ if 
+\begin{equation*}
+a_{n+i} = b_{i},
+\end{equation*}
+for $i$ any positive integer. if no such $n$ exists then we say that the two sequences are independent.
+\end{definition}
+Note that a pair of sequences can have prefixes of different length. For example if we have 
+\begin{align*}
+&\{a_i\} = \{1,2,3,4,5,6,1,2,3,4,5,6, \ldots \} \\  
+&\{b_i\}= \{7,8,9,1,2,3,4,5,6,1,2,3,4,5,6, \ldots\},
+\end{align*}
+ then $a_i$ and $b_i$ differ by prefixes of length $3+6k$ for $k$ a nonnegative integer. Because of this we make the following definition.
+ \begin{definition} 
+ We say that two sequences $\{a_i\}$ and $\{b_i\}$ differ by a minimal prefix of length $n$ if they differ by a prefix of length $n$, but do not differ by a prefix of length $m$ for all $0<m<n$.
+ \end{definition}
+We note that if a pair of sequences differs by a prefix they differ by a minimal prefix. In our above example $a_i$ and $b_i$ differ by a minimal prefix of length $3$. 
+ 
+\begin{theorem} The self-referencing sequence beginning with a $1$ generated over $\{1, c_1, c_2, \ldots, c_n\}$ differs from the self-referencing sequence beginning with $c_1$ generated over $\{1, c_1, c_2, \ldots, c_n\}$ by a minimal prefix of length 1.
+\end{theorem}
+\begin{proof}
+Let $a_i$ refer to the $i$th term of the sequence beginning with a $1$ and $b_i$ refer to the $i$th term of the sequence beginning with $c_1$. We know that $a_1=1$, this means that the first block in $a_i$ must be of length 1. In other words we must have $a_2=c_1$, but since $a_2$ is now part of the second block of $a_i$ the value of $a_3$ is not specified by $a_1$. Thus we could specify the rest of $a_i$ only knowing the value of $a_2$, but $b_1=c_1$, so this is exactly how the values of $b_i$ is specified. Therefore
+\begin{equation*}
+a_{1+i} = b_{i},
+\end{equation*}
+so $a_i$ and $b_i$ differ by a prefix of length 1, but $a_{1} \neq b_{1}$ so it is a minimal prefix. 
+\end{proof}
+
+\begin{theorem} If $1<a<b$ then the self-referencing sequence beginning with $a$ generated over $\{1, a, b\}$ and the self-referencing sequence beginning with $c_2$ generated over $\{1, a, b\}$ are independent.
+\end{theorem}
+\begin{proof}
+We proceed by contradiction. If the two sequences are not independent then they must differ by some minimal prefix of length $n$. If we let $a_i$ be the sequence beginning with $a$ and $b_i$ be the sequence beginning with $b$ the
+\begin{equation*}
+a_{n+k} = b_{k}.
+\end{equation*}
+We know that the first $b$ terms of the sequence which begins with a $b$ are $b$'s. Because $b>a>1$ no block can be longer then $b$. Thus the terms immediately preceding and following this block in the sequence $a_i$ must not be $b$'s. Because of this the first block of $b_i$ is the $m+1$th block of $a_i$, where $m$ is some positive integer. Since the value of the sequence at position $k$ is also the length of the $k$th block this means that $a_{m+1}=b_1$. In fact the $k$th block of $b_i$ is the $(m+k)$th block of $a_i$ and so 
+\begin{equation*}
+a_{m+k} = b_k
+\end{equation*}
+
+We now claim that the prefix has length strictly larger than $m$. Assume otherwise so $n \leq m$. 
+This means the entry in the $a_i$ which gives the length of the $m+1$th block occurs at or after the beginning of the $m+1$th block. By our proof that self-referential sequences are well defined we know that the second case cannot occur. Therefore the only other option would be for the $m+1$th block to start at position $m+1$, but this would require every block to have length exactly 1, but this is a contradiction because $a_1=a>1$, that is the first block has length greater than one. Therefore the prefix must have length strictly larger than $m$. 
+
+We note that based on a previous step the two sequences differ by a prefix starting at $m$. Since $m<n$ we have produced a prefix which starts before $n$ which is a contradiction. Therefore the two sequences are independent. 
+\end{proof}
+\end{document}  

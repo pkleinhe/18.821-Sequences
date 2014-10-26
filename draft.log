@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  26 OCT 2014 13:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  26 OCT 2014 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -537,24 +537,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
- [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
+
+LaTeX Warning: Reference `Density' on page 3 undefined on input line 176.
+
+[3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+ [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
 Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: 5EF5CA8539206DFFFDFAA951CF148283;598.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
  ) 
 Here is how much of TeX's memory you used:
- 7503 strings out of 493315
- 108880 string characters out of 6137904
- 214876 words of memory out of 5000000
- 10846 multiletter control sequences out of 15000+600000
+ 7508 strings out of 493315
+ 108945 string characters out of 6137904
+ 214911 words of memory out of 5000000
+ 10849 multiletter control sequences out of 15000+600000
  10305 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,8n,32p,802b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,32p,802b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -563,13 +574,14 @@ sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 /local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
 cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 /texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (3 pages, 139189 bytes).
+texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on draft.pdf (4 pages, 153936 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
+ 136 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

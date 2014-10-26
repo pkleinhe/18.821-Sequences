@@ -228,6 +228,24 @@ The iterative process given in Section~\ref{iterativeprocess} is one way to gene
 \begin{align*}
 333111333131333111333\dots
 \end{align*}
+We can use the iterative process from Section~\ref{iterativeprocess}, and suppose that $s^{(0)} = 33$. We get:
+\begin{align*}
+\{s^{(0)}\} &= 3,3\\
+\{s^{(1)}\} &= 3,3,3,1,1,1\\
+\{s^{(2)}\} &= 3,3,3,1,1,1,3,3,3,1,3,1\\
+\{s^{(3)}\} &= 3,3,3,1,1,1,3,3,3,1,3,1,3,3,3,1,1,1,3,3,3,1,3,3,3,1\\
+&\cdots
+\end{align*}
+It turns out that we can model this evolution with the following substitution rules:
+\begin{align*}
+\text{Rule }A: 3,3 &\to 3,3,3,1,1,1 \\
+\text{Rule }B: 3,1 &\to 3,3,3,1\\
+\text{Rule }C: 1,1 &\to 3,1
+\end{align*}
+This is to be interpreted as follows. Starting from 3,3, the only possible rule to apply is Rule A, which gives $3,3,3,1,1,1$ at the following iteration. We then apply Rule A to $3,3$, Rule B to $3,1$ and Rule C to $1,1$. Note that at every step, we break up the sequence into chunks of 2 and then simultaneously apply \emph{all} the rules. This will always be possible, since the rules preserve the fact that these sequences have even length. So at the following step, we have 3,3,3,1,1,1,3,3,3,1,3,1, which is $s^{(2)}$. Notice that in general, after the $i$th application of the substitution rules, the sequence is equal to $s^{(i)}$.
+
+
+
 
 \section{Density}
 \label{density}

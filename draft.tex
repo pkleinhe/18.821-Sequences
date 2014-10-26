@@ -202,20 +202,22 @@ For the inductive step, observe that a prefix of the sequence describes the bloc
 It turns out that this same argument holds in general.
 
 \begin{theorem}
-Let $\{s^0\} = a$ for some $a \in A$ where $a \neq 1$, and let $\{s^{(i)}\}$ for $i \geq 1$ be the unique sequence that starts with $a$ and is such that its block lengths, read from left to right, reproduce the sequence $\{s^{(i-1)}\}$. Then the limit of this process, $s^\infty$, is the sequence $S(A,a)$.
+Let $\{s^0\} = a$ for some $a \in A$ where $a \neq 1$, and let $\{s^{(i)}\}$ for $i \geq 1$ be the unique sequence that starts with $a$ and is such that its block lengths, read from left to right, reproduce the sequence $\{s^{(i-1)}\}$. Then the limit of this process, $s^\infty$, is the sequence $s(A,a)$.
 \end{theorem}
 
 Note that we must specify that $a \neq 1$, because that is the only case in which the length of $s^{(i+1)}$ is not strictly greater than the length of $s^{(i)}$. The proof of this theorem is omitted, as it is essentially the same proof as for the $A = \{1,2\}, a = 2$ case.
 
 It turns out that we can be less restrictive about what the starting sequence is. Going back to the case of $\{1,2\}$, we can let $s^{(0)}$ be \emph{any} sequence of 1's and 2's that starts with a 2. For example, suppose $s^{(0)} = 2,1,1,1,2$. The rules for generating large $s^{(i)}$ give:
 \begin{align*}
-\{s^{(0)}\} &= 2,1,1,1,2\\
-\{s^{(1)}\} &= 2,2,1,2,1,2,2\\
-\{s^{(2)}\} &= 2,2,1,1,2,1,1,2,1,1,2,2\\
-\{s^{(3)}\} &= 2,2,1,1,2,1,2,2,1,2,1,1,2,1,2,2,1,1\\
+\{s^{(0)}\} &= \mathbf{2},1,1,1,2\\
+\{s^{(1)}\} &= \mathbf{2,2,1},2,1,2,2\\
+\{s^{(2)}\} &= \mathbf{2,2,1,1,2,1},1,2,1,1,2,2\\
+\{s^{(3)}\} &= \mathbf{2,2,1,1,2,1,2,2,1,2},1,1,2,1,2,2,1,1\\
 &\cdots
 \end{align*}
+Here, we highlight in bold the numbers that form a prefix of $s(\{1,2\},2)$. We note that $s^\infty = s(A,a)$ simply because $s^{(0)}$ contains a 2 at the beginning, whch then causes a 2,2 to appear at the start of $s^{(1)}$, which causes $2,2,1,1$ to appear at the start of $s^{(2)}$, and so on. The rest of each $s^{(i)}$ that is not a prefix of $s({1,2},2)$ we call the \emph{tail}.
 
+We now consider two different forms of convergence. We know that $s^{(i)}$ in some sense approaches $s(A,a)$, as arbitrarily many elements at the beginning of the sequence will match up with the beginning of $s(A,a)$ as $i$ increases. However, if the tail of the sequence never entirely disappears, then there does not exist an $i$ where $s^{(i)}$ is exactly a prefix of $s(A,a)$. Thus, we can formalize two types of convergence: \emph{weak convergence} and \emph{strong convergence}. Weak convergence is satisfied if $s^\infty = s(A,a)$, and strong convergence is satisfied if $s^{(i)}$ is a prefix of $s(A,a)$ for all $i \geq k$ for some $k$.
 
 \section{Substitution Rules}
 \label{substitutionrules}

@@ -328,8 +328,16 @@ It turns out that we can model this evolution with the following substitution ru
 \end{align*}
 This is to be interpreted as follows. Starting from 3,3, the only possible rule to apply is Rule A, which gives $3,3,3,1,1,1$ at the following iteration. We then apply Rule A to $3,3$, Rule B to $3,1$ and Rule C to $1,1$. Note that at every step, we break up the sequence into chunks of 2 and then simultaneously apply \emph{all} the rules. This will always be possible, since the rules preserve the fact that these sequences have even length. So at the following step, we have 3,3,3,1,1,1,3,3,3,1,3,1, which is $s^{(2)}$. Notice that in general, after the $i$th application of the substitution rules, the sequence is equal to $s^{(i)}$.
 
+Why does this work? Well, first of all, notice that the rules are the natural applications of the self-referential sequence. Also, note that we have decided to make the rules of length 2; if we had made the self-referential rules $1 \rightarrow 1$ and $3 \rightarrow 333$, this would not have worked. In addition, we know that each block length preserves parity. 
 
+So we can ask, when can we do this? We would like to be able to simulate our original algorithm with this current one. We had established that our algorithm had a state corresponding to 
+\begin{itemize}
+\item current block length number
+\item how many elements already written down in the block
+\item which number we need to write.
+\end{itemize}
 
+In an algorithm with rules, we cannot remember anything about the previous rules. Therefore, each rule needs to encompas the block length numbers, the number of elements already written, and which number we need to write. The first condition is trivial to keep, since the rules themselves will say the block length numbers, in order to keep track of the numbers already written, each rule should be self-contained. That means that the rules should read off the block numbers. We would also need the length of the rules to be divisible by the size of the generating set. This is so that at the start of each rule, we always know which numbers to write.
 
 \section{Density}
 \label{density}

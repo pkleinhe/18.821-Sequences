@@ -215,12 +215,43 @@ Assume otherwise. By our Lemma ~\ref{readdistformula} we know that the read dist
 \begin{theorem} If two sequences are equivalent then the first element of the shared sequence must have the same read distance in both sequences.
 \end{theorem}
 \begin{proof}
-Assume otherwise. So if the two sequences are $a_i$ and $b_i$ and we have 
+Assume otherwise. So if the two sequences are $a_j$ and $b_j$ and we have 
 \begin{equation*}
 a_{i+l} = b_{i+k} = c_{i}
 \end{equation*}
-
+such that if $m$ or $l$ were made smaller this relation would not hold. Suppose the read distance for $b_{1+k}$ is $x$ and the read distance for $a_{1+l}$ is $y$. Without loss of generality let us assume that $x>y$. 
+Therefore we know there are two separate blocks of length $c_1$ in the sequence, one which corresponds to $a_{i+l}$ and another which corresponds to $b_{i+k}$.
+Because the two sequences are identical there exists some index $n$ such that $c_{n+1}=a_{m}$ is the element of sequence $a$ which corresponds to the second block of length $c_1$. 
+Because the sequences are self referential we know that $c_1, c_2, \ldots, c_{n}$  must appears in $b$ prior to element $i+k$. In fact the self referential nature of the sequence guarantees that $b_{i+k-1}=c_{n}$, that is this subsequence must end just before the two sequences become the same. Thus our sequence $b$ is  
+\begin{equation*}
+\cdots c_1 c_2 c_3 \cdots c_{n} c_1 c_2 \cdots c_n \cdots
+\end{equation*}
+where the prefix begins at the second $c_1$. We now claim that the common sequence cycles through
+\begin{equation*}
+c_1 c_2 \cdots c_n.
+\end{equation*}
+Well by Lemma ~\ref{readdistformula} since the read distance for $b_{1+k}$ is greater than the read distance for $a_{1+l}$, and the sequences are identical for subsequent indices, we know that the read distance for $b_{i+k}$ is longer than the read distance for $a_{i+l}$ by exactly $x-y$. Thus $b_{k+i}$ corresponds to the same block as $a_{l+(x-y)+i}$. But $b_{k+i} = c_{i}$ and $a_{l+(x-y)+i}=c_{x-y+i}$ and so $c_{i} = c_{x-y+i}$ and so the common sequence cycles. Because the common sequence cycles and $b$ has the same cycle, but one which begins before the common sequence $l$ could be made smaller and have the equivalence relation hold. This is a contradiction and so the first element of the shared sequence must have the same read distance in both sequences. 
 \end{proof}
+
+We also have a sufficient condition for equivalence 
+\begin{lemma} If two sequences $a_i, b_i$ are such that for some integers $m,l$ the read distance for $a_m$ and $b_l$ are the same and 
+\begin{equation*}
+a_{m+k} = b_{l+k}
+\end{equation*}
+where $k$ ranges from 0 to the read distance for $a_m$ then $a_i$ and $b_i$ are equivalent. 
+\end{lemma}
+\begin{proof}
+We will prove this using a simple induction. Suppose the read distance for $a_m$ is $d$ then know that $a_{m+d} = b_{l+d}$ because $a_{m+d-1} = b_{l+d-1}$ and $a_{m+d}$ is the beginning of a new block. Furthermore we have that the read distance for $a_{m+d}$ equals the read distance for $b_{l+d}$. Now suppose that we have for $k \leq j$ that $a_{m+k} = b_{l+k}$ and the read distance for $a_{m+k}$ equals the read distance for $b_{l+k}$ and we would like to show that this holds for $k = j+1$. By Lemma ~\ref{readdistformula} we actually already know that the read distance for the two is the same, as it is the same for the preceding terms, which are equal.
+
+If $a_{m+k}$ is the last term in a block then $b_{m+k}$ must also be the last term in its block, because the length of blocks is determined by earlier terms which we know to be equal and to have the same read distance. Since $a_{m+k} = b_{l+k}$  in this case we have $a_{m+k+1} = b_{l+k+1}$. 
+
+Otherwise $a_{m+k}$ and $a_{m+k+1}$ are in the same block, then we only need to show that $b_{l+k}$ and $b_{l+k+1}$ are in the same block as well. But as we argued above the length of blocks is determined by terms earlier in the sequence which we know to be equal and have the same read distance. Therefore we have $a_{m+k+1} = b_{l+k+1}$ for this case as well. This completes our induction and so $a_i$ and $b_i$ are equivalent. 
+\end{proof}
+These conditions for equivalence lead us to make the following conjecture on a sufficient condition for nonequivalence.
+
+\begin{conjecture} If two sequences $a_i$ and $b_i$ have elements $a_k \neq b_l$, for $k,l>1$ with the same read distance then they are not equivalent. 
+\end{conjecture}
+
 \section{An Iterative Process}
 \label{iterativeprocess}
 

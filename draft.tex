@@ -77,7 +77,7 @@ as the second sequence has the numbers in the wrong order.
 
 \subsection{Overview}
 
-In this paper, we address a variety of questions regarding these sequences. In Section~\ref{determinism} we show that if we are given a generating set and a starting number for the sequence, the sequence is uniquely determined. After that, we consider how the starting number for the sequence affects what the sequence can be. In particular, in Section~\ref{prefixes}, we show that there exist limits on how much two sequences with the same generating set can resemble each other if they start with different numbers. In the following Section~\ref{equivalence}, we consider the limiting behavior of such sequences, and we conjecture that the limiting behavior of a sequence is determined only by the generating set, and not the starting number. 
+In this paper, we address a variety of questions regarding these sequences. In Section~\ref{determinism} we show that if we are given a generating set and a starting number for the sequence, the sequence is uniquely determined. After that, we consider how the starting number for the sequence affects the long term behavior of the sequence. In particular, in Section~\ref{prefixes}, we show that there exist limits on how much two sequences with the same generating set can resemble each other if they start with different numbers. In the following Section~\ref{equivalence}, we consider the limiting behavior of such sequences, and we conjecture that the limiting behavior of a sequence is determined only by the generating set, and not the starting number. 
 
 In Section~\ref{iterativeprocess}, we take a different approach to analyzing these sequences by showing that there is an alternate way of generating them with an iterative process. In Section~\ref{substitutionrules}, we show how a large number of these sequences can actually be generated with a simple set of substitution rules. We then introduce the density problem in Section~\ref{density}, and use ideas developed in Section~\ref{iterativeprocess} and Section~\ref{substitutionrules} to answer the question for certain types of generating sets. Unfortunately, we find that the open problem of determining the density for the sequence of 1's and 2's is hard to solve using our methods.
 
@@ -86,15 +86,15 @@ In Section~\ref{iterativeprocess}, we take a different approach to analyzing the
 
 \emph{Written by Fermi Ma, edited by Perry Kleinhenz and Erik Waingarten}
 
-We claim that a self-referencing sequence is uniquely determined by the generating set and the starting number. To see why this is true, we can simply give an algorithm to build the sequence. Assume the generating set is $\{a_1,a_2,\dots,a_m\}$ and that we start with some $a_i$. If we ever write down some $a_k$ where $k > m$, we set this equal to $a_{k (\text{mod } m)}$.
+We claim that a self-referencing sequence is uniquely determined by the generating set and the starting number. To see why this is true, we give an algorithm to build the sequence. Assume the generating set is $\{a_1,a_2,\dots,a_m\}$ and that we start with some $a_i$. If we ever write down some $a_k$ where $k > m$, we set this equal to $a_{k (\text{mod } m)}$.
 \begin{quote}
 \textbf{Algorithm:}\\
-Suppose the first number of the sequence is $a_i$. Then the first block of the sequence must be a block of $a_i$ instances of $a_i$, so we extend the sequence to this block. If $a_i$ is not 1, then there is a second element of that sequence. We read that second element, and then we add a block to the end of that sequence with length dictated by the value of the second element. If $a_i$ is equal to 1, we write down $a_{i+1}$ in the second spot, and use the value of $a_{i+1}$ to dictate the length of the second block.\\
+Suppose the first number of the sequence is $a_i$. Then the first block of the sequence must be a block of $a_i$ instances of $a_i$, so we extend the sequence to this block. If $a_i$ is not 1, then there is a second element of that block. We read that second element, and then we add a block of $a_i$ instances of $a_{i+1}$ to the end of that sequence. If $a_i$ is equal to 1, we write down $a_{i+1}$ in the second spot, and use the value of $a_{i+1}$ to dictate the length of the second block.\\
 
-This procedure can continue deterministically so long as there is always an element to read. However, every time we write down a block, we read 1 element and write down at least 1 element, so the end of the sequence will always be after the spot we are reading. The only exception is when $a_i = 1$, but then since $a_{i+1} \neq 1$, this issue will never occur again.
+This procedure continues deterministically so long as there is an element to read. Every time we write down a block, we read 1 element and write down at least 1 element, thus the end of the sequence will always be at or after the spot we are reading.
 \end{quote}
 
-Thus, a self-referencing sequence is uniquely determined by the generating set and the starting number. From this point on, we will denote by $s(A,a)$ the unique sequence generated by set $A$ with starting number $a \in A$.
+Thus, a self-referencing sequence is uniquely determined by the generating set and the starting number. From this point on, we will denote by $s(G,g)$ the unique sequence generated by set $G$ with starting number $g \in G$.
 
 \section{Prefixes}
 \label{prefixes}

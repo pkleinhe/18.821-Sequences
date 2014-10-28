@@ -103,9 +103,9 @@ Thus, a self-referencing sequence is uniquely determined by the generating set a
 \begin{equation*}
 a_{n+i} = b_{i},
 \end{equation*}
-for $i$ any positive integer. if no such $n$ exists then we say that the two sequences are independent.
+for $i$ any positive integer. We say that two sequences are independent if they do not differ by a prefix for any $n$, in either order. 
 \end{definition}
-Note that a pair of sequences can have prefixes of different length. For example if we have 
+Note that a pair of sequences can differ by multiple prefixes of different length. For example if we have 
 \begin{align*}
 &\{a_i\} = \{1,2,3,4,5,6,1,2,3,4,5,6, \ldots \} \\  
 &\{b_i\}= \{7,8,9,1,2,3,4,5,6,1,2,3,4,5,6, \ldots\},
@@ -114,30 +114,30 @@ Note that a pair of sequences can have prefixes of different length. For example
  \begin{definition} 
  We say that two sequences $\{a_i\}$ and $\{b_i\}$ differ by a minimal prefix of length $n$ if they differ by a prefix of length $n$, but do not differ by a prefix of length $m$ for all $0<m<n$.
  \end{definition}
-We note that if a pair of sequences differs by a prefix they differ by a minimal prefix. In our above example $a_i$ and $b_i$ differ by a minimal prefix of length $3$. The following lemma is a trivial consequence of our algorithm for generating self-referential sequences:
+We note that if a pair of sequences differs by a prefix they differ by a minimal prefix. In our above example $a_i$ and $b_i$ differ by a minimal prefix of length $3$. The following lemma is a direct consequence of our algorithm for generating self-referential sequences:
 
-\begin{lemma} Let $C = \{1, c_1, c_2, \ldots, c_n\}$, $s(C, 1)$ and $s(C, c_1)$ differ by a minimal prefix of length at most 1.
+\begin{lemma} Let $G = \{1, g_1, g_2, \ldots, g_n\}$, $s(G, 1)$ and $s(G, g_1)$ differ by a minimal prefix of length at most 1.
 \end{lemma}
 \begin{proof}
-Let $a_i$ refer to the $i$th term of $s(C, 1)$ and $b_i$ refer to the $i$th term of $s(C, c_1)$. If we use our algorithm for generating the sequence, we note that $a_1 = 1$, and so $a_2 = c_1$, and that this is the beginning of a new block of length $c_1$. Furthermore, $b_1 = c_1$ and it indicated the beginning of a block of length $c_1$. Note that our algorithm is ``memory-less'' in the sense that it does not maintain any state about previous elements. Because the number and the begining of the block is the same. The algorithm will generate the same sequence, shifted by 1. Therefore, $s(C,1)$ and $s(C, c_1)$ differ by a minimal prefix of length at most 1.
+Let $a_i$ refer to the $i$th term of $s(G, 1)$ and $b_i$ refer to the $i$th term of $s(G, g_1)$. If we use our algorithm for generating the sequence, we note that $a_1 = 1$, and so $a_2 = g_1$, and that this is the beginning of a new block of length $g_1$. Furthermore, $b_1 = g_1$ and it indicated the beginning of a block of length $g_1$. Note that our algorithm is ``memory-less'' in the sense that it does not maintain any state about previous elements. Because the number and the begining of the block is the same. The algorithm will generate the same sequence, shifted by 1. Therefore, $s(G,1)$ and $s(G, g_1)$ differ by a minimal prefix of length at most 1.
 \end{proof}
-
+We now give a 
 \begin{theorem}
 \label{independentsequences}
-Let $C = \{ 1, a, b\}$ where $1<a<b$. $s(C, a)$ and $s(C, b)$ are independent.
+Let $G = \{ 1, a, b\}$ where $1<a<b$. $s(G, a)$ and $s(G, b)$ are independent.
 \end{theorem}
 \begin{proof}
-We proceed by contradiction. If the two sequences are not independent then they must differ by some minimal prefix of length $n$. If we let $a_i$ be the sequence beginning with $a$ and $b_i$ be the sequence beginning with $b$ the
+We proceed by contradiction. If the two sequences are not independent then they must differ by some minimal prefix of length $n$. If we let $a_i$ be the sequence beginning with $a$ and $b_i$ be the sequence beginning with $b$ then
 \begin{equation*}
 a_{n+k} = b_{k}.
 \end{equation*}
-We know that the first $b$ terms of the sequence which begins with a $b$ are $b$'s. Because $b>a>1$ no block can be longer then $b$. Thus the terms immediately preceding and following this block in the sequence $a_i$ must not be $b$'s. Because of this the first block of $b_i$ is the $m+1$th block of $a_i$, where $m$ is some positive integer. Since the value of the sequence at position $k$ is also the length of the $k$th block this means that $a_{m+1}=b_1$. In fact the $k$th block of $b_i$ is the $(m+k)$th block of $a_i$ and so 
+We know that the first $b$ terms of $b_i$ are $b$'s. Because $b>a>1$ no block can be longer then $b$. Thus the terms immediately preceding and following this block in  $a_i$ cannot be $b$'s. Because of this the first block of $b_i$ is the $m+1$th block of $a_i$, for some $m$ a positive integer. Since the value of the sequence at position $k$ is the length of the $k$th block this means that $a_{m+1}=b_1$. In fact the $k$th block of $b_i$ is the $(m+k)$th block of $a_i$ and so 
 \begin{equation*}
 a_{m+k} = b_k
 \end{equation*}
 
 We now claim that the prefix has length strictly larger than $m$. Assume otherwise so $n \leq m$. 
-This means the entry in the $a_i$ which gives the length of the $m+1$th block occurs at or after the beginning of the $m+1$th block. By our proof that self-referential sequences are well defined we know that the second case cannot occur. Therefore the only other option would be for the $m+1$th block to start at position $m+1$, but this would require every block to have length exactly 1, but this is a contradiction because $a_1=a>1$, that is the first block has length greater than one. Therefore the prefix must have length strictly larger than $m$. 
+This means that $a_{m+1}$ which gives the length of the $m+1$th block occurs at or after the beginning of the $m+1$th block, which begins at position $a_{n+1}$. By our proof that self-referential sequences are well defined we know that the second case cannot occur. Therefore we must have the $m+1$th block start at position $m+1$. This would require every block to have length exactly 1, but this is a contradiction because the first block has length $a_1=a>1$. Therefore the prefix must have length strictly larger than $m$. 
 
 We note that based on a previous step the two sequences differ by a prefix starting at $m$. Since $m<n$ we have produced a prefix which starts before $n$ which is a contradiction. Therefore the two sequences are independent. 
 \end{proof}

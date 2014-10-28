@@ -315,7 +315,7 @@ We make this conjecture on the basis on computer simulations which executes the 
 \section{Substitution Rules}
 \label{substitutionrules}
 
-\emph{Written by Fermi Ma, edited by Perry Kleinhenz and Erik Waingarten}
+\emph{Written by Fermi Ma and Erik Waingarten, edited by Perry Kleinhenz}
 
 The iterative process given in Section~\ref{iterativeprocess} is one way to generate self-referencing sequences. However, for certain generating sets $A$, there is a simpler ways to perform this iteration using a fixed set of substitution rules. Take $A = \{1,3\}$ as an example, and consider the sequence that starts with a 3:
 \begin{align*}
@@ -414,5 +414,29 @@ In general, we can continue this process, and we did, to show that
 \[ \dfrac{1}{3} + \dfrac{1}{9} + \dfrac{1}{27} \leq d_2 \leq 1 - \dfrac{1}{3} - \dfrac{1}{9} - \dfrac{1}{27} \]
 Of course, the number of cases to check increases very quickly: there are $3$ choices to put the $2$ in the groups of $3$, $3$ choices to put the 3 groups of 2's and 2 positions within these groups for the groups of 9, and so on. Its not hard to see that this number grows exponentially fast, making it computationally difficult to analyze more cases.
 
-We believe that if there is a way to show this, we will be able to show that the density is $\frac{1}{2}$, since the density will be bounded below by $\sum_{n=1}^\infty \dfrac{1}{3^n} = \frac{1}{2}$ and bounded above by the same number. However, generalizing the procedure to improve the bound seems difficult.   
+We believe that if there is a way to show this, we will be able to show that the density is $\frac{1}{2}$, since the density will be bounded below by $\sum_{n=1}^\infty \dfrac{1}{3^n} = \frac{1}{2}$ and bounded above by the same number. However, generalizing the procedure to improve the bound seems difficult.
+
+\section{Unresolved Problems}
+\emph{Written by Fermi Ma, edited by Perry Kleinhenz and Erik Waingarten}
+
+Our work leaves a number of unresolved problems. 
+
+\begin{itemize}
+\item In Section~\ref{equivalence}, we propose the idea that in some sense, the number that we start a sequence with does not matter. In other words, any sequence that uses a certain generating set is equivalent to any other sequence created by the same generating set.
+\item In the same section, we propose a condition for determining when two sequences are not equivalent. We conjecture that if two sequences have unequal numbers with the same read distances, then they are not equivalent. It seems from trying cases that this condition is sufficient, but we have been unable to prove it.
+\item In Section~\ref{iterativeprocess} we make a conjecture on when sequences are strongly and weakly convergent. We have not yet been able to investigate strong and weak convergence in great detail, as we have been unable to make precise mathematical statements about these types of convergence. Most of what we know about them comes from analyzing numerical data.
+\item In Section~\ref{substitutionrules}, we look at substitution rules for certain ``nice" generating sets of numbers, such as $\{1,3\}$ and $\{2,4\}$. These sets allow for substitution rules because they satisfy the trio of properties we outline in that section. However, we do not know that these are the only properties. We leave unresolved the question of determining precisely which sets allow for substitution rules and which ones ones do not. The major difficulty here seems to come in proving that a certain generating set does \emph{not} allow for substitution rules.
+\item In Section~\ref{density} we were able to compute the density of any sequence with generating set $\{1,3\}$, and we were able to give bounds on the density of any sequence with generating set $\{1,2\}$. However, we leave unresolved the question of what the density for $\{1,2\}$ actually is, or even if we can obtain tighter bounds.
+\end{itemize}
+
+\section{Haikus}
+\emph{Written by Fermi Ma}\\
+
+\noindent One, Two, Two, One, One,\\
+Two, One, Two, Two, One, Two, Two,\\
+One, One, Two, One, One...\\
+
+\noindent For the final draft,\\
+we will improve the haikus\\
+(and the whole paper).
 \end{document}  

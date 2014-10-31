@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.11)  27 OCT 2014 17:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.11)  31 OCT 2014 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -533,75 +533,86 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+<sequenceBlocks.pdf, id=54, 562.1pt x 80.3pt>
+File: sequenceBlocks.pdf Graphic file (type pdf)
+ <use sequenceBlocks.pdf>
+Package pdftex.def Info: sequenceBlocks.pdf used on input line 65.
+(pdftex.def)             Requested size: 208.41644pt x 29.77301pt.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 91--93
+<sequenceBlocks123.pdf, id=58, 562.1pt x 80.3pt>
+File: sequenceBlocks123.pdf Graphic file (type pdf)
+ <use sequenceBlocks123.pdf>
+Package pdftex.def Info: sequenceBlocks123.pdf used on input line 86.
+(pdftex.def)             Requested size: 208.41644pt x 29.77301pt.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./sequenceBlocks.pdf> <./s
+equenceBlocks123.pdf
+
+pdfTeX warning: pdflatex (file ./sequenceBlocks123.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
 
  []
 
-[2] [3]
-
-LaTeX Warning: Reference `Density' on page 4 undefined on input line 185.
-
-[4]
-Overfull \hbox (46.6012pt too wide) in paragraph at lines 217--218
+[2] [3] [4]
+Overfull \hbox (52.71237pt too wide) in paragraph at lines 242--243
 []\OT1/cmr/m/it/10 Consider a self ref-er-enc-ing se-quence $\OML/cmm/m/it/10 x
 $ \OT1/cmr/m/it/10 gen-er-ated by $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 a[]; a[];
  [] ; a[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/it/10 with $\OML/cmm/m/it/10 a \OT1/cmr
-/m/n/10 = [] []$\OT1/cmr/m/it/10 .
+/m/n/10 = [](\OML/cmm/m/it/10 a[]; a[]; [] ; a[]\OT1/cmr/m/n/10 )$\OT1/cmr/m/it
+/10 .
  []
 
-[5] [6] [7] [8]
+[5] [6] [7] [8] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 391.
+ []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 391.
+Underfull \hbox (badness 10000) in paragraph at lines 460--463
 
-[9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 414.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 414.
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 467.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 467.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 414.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 414.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 467.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 467.
 Package rerunfilecheck Info: File `draft.out' has not changed.
-(rerunfilecheck)             Checksum: 9CF16A3158ED8119809D9B0170B44CFA;765.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 414.
+(rerunfilecheck)             Checksum: DEFEBFFD61615C3CC15D39507FA4F7C9;717.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 467.
  ) 
 Here is how much of TeX's memory you used:
- 7542 strings out of 493304
- 108757 string characters out of 6139871
- 215225 words of memory out of 5000000
- 10867 multiletter control sequences out of 15000+600000
- 12754 words of font info for 48 fonts, out of 8000000 for 9000
+ 7554 strings out of 493304
+ 109018 string characters out of 6139871
+ 215352 words of memory out of 5000000
+ 10874 multiletter control sequences out of 15000+600000
+ 11232 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,10n,32p,915b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (10 pages, 211408 bytes).
+ 29i,10n,32p,800b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on draft.pdf (11 pages, 223652 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

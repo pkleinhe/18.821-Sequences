@@ -255,9 +255,8 @@ If $a_{m+k}$ is the last term in a block then $b_{m+k}$ must also be the last te
 Otherwise $a_{m+k}$ and $a_{m+k+1}$ are in the same block, and so we only need to show that $b_{l+k}$ and $b_{l+k+1}$ are in the same block as well. But as we argued above the length of blocks is determined by terms earlier in the sequence, which we know to be equal and have the same read distance. Therefore we have $a_{m+k+1} = b_{l+k+1}$ for this case as well. This completes our induction and so $\{a_i\}$ and $\{b_i\}$ are equivalent. 
 \end{proof}
 
-The following is a simple observation of sequences that begin with $1$.
-
-\begin{corollary} Let $C = (1 c_1 c_2 \cdots c_n)$. $s(C, 1)$ and $s(C, c_1)$ are equivalent.
+This result allows us to make a general statement for equivalence for sequences that begin with a $1$.
+\begin{corollary} If $C = (1 c_1 c_2 \cdots c_n)$, then $s(C, 1)$ and $s(C, c_1)$ are equivalent.
 \end{corollary}
 \begin{proof}
 Let $\{a_i\} = s(C, 1)$ and $\{b_i\} = s(C, c_1)$. The read distance of sequence $\{a_i\}$ for $i=2$ is 0, and the read distance of sequence $\{b_i\}$ for $i = 1$ is 0. In addition, $a_2 = b_1 = c_1$, so by Proposition ~\ref{equivsuff} the two sequences are equivalent.

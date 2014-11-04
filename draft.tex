@@ -212,22 +212,26 @@ The read distances can stay constant from $i$ to $i+1$ only if there is a $a_{i+
 \begin{theorem} If two sequences are equivalent then the first element of the shared sequence must have the same read distance in both sequences.
 \end{theorem}
 \begin{proof}
-Assume otherwise. So if the two sequences are $a_j$ and $b_j$ and we have 
+Assume otherwise. Suppose the two sequences are $\{a_j\}$ and $\{b_j\}$ and we have 
 \begin{equation*}
 a_{i+l} = b_{i+k} = c_{i}
 \end{equation*}
-such that if $m$ or $l$ were made smaller this relation would not hold. Suppose the read distance for $b_{1+k}$ is $x$ and the read distance for $a_{1+l}$ is $y$. Without loss of generality let us assume that $x>y$. 
-Therefore we know there are two separate blocks of length $c_1$ in the sequence, one which corresponds to $a_{i+l}$ and another which corresponds to $b_{i+k}$.
-Because the two sequences are identical there exists some index $n$ such that $c_{n+1}=a_{m}$ is the element of sequence $a$ which corresponds to the second block of length $c_1$. 
-Because the sequences are self referential we know that $c_1, c_2, \ldots, c_{n}$  must appears in $b$ prior to element $i+k$. In fact the self referential nature of the sequence guarantees that $b_{i+k-1}=c_{n}$, that is this subsequence must end just before the two sequences become the same. Thus our sequence $b$ is  
+for all $i>1$, such that if $m$ or $l$ were made smaller this relation would not hold. Suppose the read distance for $b_{k+1}$ is $x$ and the read distance for $a_{1+l}$ is $y$. Without loss of generality let us assume that $x>y$ (note that $x \neq y$ as per our assumption).
+
+Since the two read distances are different we know there are two separate blocks of length $c_1$ in the sequence, one which corresponds to $a_{i+l}$ and another which corresponds to $b_{i+k}$. 
+Because the two sequences are equal after a certain point and $\{a_j\}$ is self referential there exists some index $n$ such that $c_{n+1}=a_{n+l}$ is the element of $\{a_j\}$ which corresponds to the second block of length $c_1$. 
+
+We now claim that $c_1, c_2, \ldots, c_{n}$  must appear in $\{b_j\}$ such that $b_{i+k-1}=c_{n}$. This is true because $\{b_j\}$ is self referential, and so the length of the blocks of the sequence $\{c_i\}$ must reproduce the terms of $\{b_j\}$. In particular the lengths of the blocks which occur before the second block of length $c_1$ must appear in $\{b_j\}$, and must end right next to the number which refers to the second block of length $c_1$. 
+
+Thus our sequence $\{b_j\}$ is  
 \begin{equation*}
 \cdots c_1 c_2 c_3 \cdots c_{n} c_1 c_2 \cdots c_n \cdots
 \end{equation*}
-where the prefix begins at the second $c_1$. We now claim that the common sequence cycles through
+where the prefix ends at the second $c_1$. We now claim that the common sequence cycles through
 \begin{equation*}
 c_1 c_2 \cdots c_n.
 \end{equation*}
-Well by Lemma ~\ref{readdistformula} since the read distance for $b_{1+k}$ is greater than the read distance for $a_{1+l}$, and the sequences are identical for subsequent indices, we know that the read distance for $b_{i+k}$ is longer than the read distance for $a_{i+l}$ by exactly $x-y$. Thus $b_{k+i}$ corresponds to the same block as $a_{l+(x-y)+i}$. But $b_{k+i} = c_{i}$ and $a_{l+(x-y)+i}=c_{x-y+i}$ and so $c_{i} = c_{x-y+i}$ and so the common sequence cycles. Because the common sequence cycles and $b$ has the same cycle, but one which begins before the common sequence $l$ could be made smaller and have the equivalence relation hold. This is a contradiction and so the first element of the shared sequence must have the same read distance in both sequences. 
+Since the read distance for $b_{1+k}$ is greater than the read distance for $a_{1+l}$, and the sequences are identical for subsequent indices by Lemma ~\ref{readdistformula}, we know that the read distance for $b_{i+k}$ is longer than the read distance for $a_{i+l}$ by exactly $x-y$. Thus $b_{k+i}$ corresponds to the same block as $a_{l+(x-y)+i}$. But $b_{k+i} = c_{i}$ and $a_{l+(x-y)+i}=c_{x-y+i}$ and so $c_{i} = c_{x-y+i}$ and so the common sequence cycles. Because the common sequence cycles and $\{b_j\}$ has the same cycle, but one which begins before the common sequence, $l$ could be made smaller and have the equivalence relation hold. This is contradicts our statement that $l$ is as small as possible. Therefore the first element of the shared sequence must have the same read distance in both sequences. 
 \end{proof}
 
 We also have a sufficient condition for equivalence 

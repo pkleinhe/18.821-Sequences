@@ -235,26 +235,32 @@ Since the read distance for $b_{1+k}$ is greater than the read distance for $a_{
 \end{proof}
 
 We also have a sufficient condition for equivalence 
-\begin{lemma} If two sequences $(a_i), (b_i)$ are such that for some integers $m,l$ the read distance for $a_m$ and $b_l$ are the same and 
+\begin{proposition} 
+\label{equivsuff}
+If two sequences $(a_i), (b_i)$ are such that for some integers $m,l$ the read distance for $a_m$ and $b_l$ are both $d$, some integer and 
 \begin{equation*}
 a_{m+k} = b_{l+k}
 \end{equation*}
-where $k$ ranges from 0 to the read distance for $a_m$ then $(a_i)$ and $(b_i)$ are equivalent. 
-\end{lemma}
+where $0 \leq k \leq d-1$ then $\{a_i\}$ and $\{b_i\}$ are equivalent. 
+\end{proposition}
 \begin{proof}
-We will prove this using a simple induction. Suppose the read distance for $a_m$ is $d$ then know that $a_{m+d} = b_{l+d}$ because $a_{m+d-1} = b_{l+d-1}$ and $a_{m+d}$ is the beginning of a new block. Furthermore we have that the read distance for $a_{m+d}$ equals the read distance for $b_{l+d}$. Now suppose that we have for $k \leq j$ that $a_{m+k} = b_{l+k}$ and the read distance for $a_{m+k}$ equals the read distance for $b_{l+k}$ and we would like to show that this holds for $k = j+1$. By Lemma ~\ref{readdistformula} we actually already know that the read distance for the two is the same, as it is the same for the preceding terms, which are equal.
+We will prove this by  induction. In particular we will show for all $k \geq 0$ that $a_{m+k} = b_{l+k}$ and the read distance for $a_{m+k}$ equals the read distance for $b_{l+k}$. By our assumptions we already have this for $0 \leq k \leq d-1$ and so we begin with $k=d$.
+
+Since a new block begins at $a_{m+d}$ and $b_{l+d}$ and $a_{m+d-1} = b_{l+d-1}$ we have $a_{m+d} = b_{l+d}$. Furthermore, by Proposition ~\ref{readdistformula} we have that the read distance for $a_{m+d}$ equals the read distance for $b_{l+d}$. 
+
+Now suppose that  for $k \leq j$ we have $a_{m+k} = b_{l+k}$ and the read distance for $a_{m+k}$ equals the read distance for $b_{l+k}$. We would like to show that this holds for $k = j+1$. By Proposition ~\ref{readdistformula} we actually already know that the read distance for the two is the same, as it is the same for the preceding terms, which are equal.
 
 If $a_{m+k}$ is the last term in a block then $b_{m+k}$ must also be the last term in its block, because the length of blocks is determined by earlier terms which we know to be equal and to have the same read distance. Since $a_{m+k} = b_{l+k}$  in this case we have $a_{m+k+1} = b_{l+k+1}$. 
 
-Otherwise $a_{m+k}$ and $a_{m+k+1}$ are in the same block, then we only need to show that $b_{l+k}$ and $b_{l+k+1}$ are in the same block as well. But as we argued above the length of blocks is determined by terms earlier in the sequence which we know to be equal and have the same read distance. Therefore we have $a_{m+k+1} = b_{l+k+1}$ for this case as well. This completes our induction and so $(a_i)$ and $(b_i)$ are equivalent. 
+Otherwise $a_{m+k}$ and $a_{m+k+1}$ are in the same block, and so we only need to show that $b_{l+k}$ and $b_{l+k+1}$ are in the same block as well. But as we argued above the length of blocks is determined by terms earlier in the sequence, which we know to be equal and have the same read distance. Therefore we have $a_{m+k+1} = b_{l+k+1}$ for this case as well. This completes our induction and so $\{a_i\}$ and $\{b_i\}$ are equivalent. 
 \end{proof}
 
 The following is a simple observation of sequences that begin with $1$.
 
-\begin{corollary} Let $C = (1, c_1, c_2, \ldots, c_n)$. $s(C, 1)$ and $s(C, c_1)$ are equivalent.
+\begin{corollary} Let $C = (1 c_1 c_2 \cdots c_n)$. $s(C, 1)$ and $s(C, c_1)$ are equivalent.
 \end{corollary}
 \begin{proof}
-Let $(a_i) = s(C, 1)$ and $(b_i) = s(C, c_1)$. The read distance of sequence $(a_i)$ for $i=2$ is 0, and the read distance of sequence $(b_i)$ for $i = 1$ is 0. In addition, $a_2 = b_1 = c_1$, which means the two sequences are equivalent.
+Let $\{a_i\} = s(C, 1)$ and $\{b_i\} = s(C, c_1)$. The read distance of sequence $\{a_i\}$ for $i=2$ is 0, and the read distance of sequence $\{b_i\}$ for $i = 1$ is 0. In addition, $a_2 = b_1 = c_1$, so by Proposition ~\ref{equivsuff} the two sequences are equivalent.
 \end{proof}
 
 These conditions for equivalence lead us to make the following conjecture on a sufficient condition for nonequivalence.

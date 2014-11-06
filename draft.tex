@@ -281,53 +281,55 @@ This result also allows us to make a general statement for equivalence of sequen
 Let $\{a_i\} = s(C, 1)$ and $\{b_i\} = s(C, c_1)$. The read distance of sequence $\{a_i\}$ for $i=2$ is 0, and the read distance of sequence $\{b_i\}$ for $i = 1$ is 0. In addition, $a_2 = b_1 = c_1$, so by Theorem ~\ref{equivsuff} the two sequences are equivalent.
 \end{proof}
 
-We can also demonstrate a sufficient condition for equivalence. 
+We can also demonstrate a necessary condition for equivalence. 
 \begin{theorem}
 \label{thm:readfirst}
 If two sequences are equivalent then the first element of the shared sequence must have the same read distance in both sequences.
 \end{theorem}
 
 \begin{proof}
-Assume otherwise. Suppose the two sequences are $\{a_j\}$ and $\{b_j\}$ and we have 
+Suppose the two sequences are $\{a_j\}$ and $\{b_j\}$ and we have 
 \begin{equation*}
-a_{i+l} = b_{i+k} = c_{i}
+a_{m+i} = b_{l+i} = c_{i} \quad 1 \leq i
 \end{equation*}
-for all $i>1$, such that if $m$ or $l$ were made smaller this relation would not hold. Suppose the read distance for $b_{k+1}$ is $x$ and the read distance for $a_{1+l}$ is $y$. Without loss of generality let us assume that $x>y$ (note that $x \neq y$ as per our assumption).
+such that if $m$ or $l$ were made smaller this relation would not hold. We will proceed by contradiction so assume that the read distance for $a_{m+1}$ is $x$ and the read distance for $b_{l+1}$ is $y$ such that $x<y$.
 
-Since the two read distances are different we know there are two separate blocks of length $c_1$ in the sequence, one which corresponds to $a_{i+l}$ and another which corresponds to $b_{i+k}$. 
-Because the two sequences are equal after a certain point and $\{a_j\}$ is self referential there exists some index $n$ such that $c_{n+1}=a_{n+l}$ is the element of $\{a_j\}$ which corresponds to the second block of length $c_1$. 
+%Since the two sequences are equivalent the block that begins at index $m+x+1$ in $\{a_i\}$ begins at index $l+x+1$ in $\{b_i\}$. The element which refers to this block in $\{b_i\}$ must appear before the index $l+1$, because the element at index $l+1$ refers to the block beginning at $l+y+1$ and read distance is non-decreasing. Furthermore this element of $\{b_i\}$ must have the same value as $a_{m+1}$, because the two blocks are of the same length.  
 
-We now claim that $c_1, c_2, \ldots, c_{n}$  must appear in $\{b_j\}$ such that $b_{i+k-1}=c_{n}$. This is true because $\{b_j\}$ is self referential, and so the length of the blocks of the sequence $\{c_i\}$ must reproduce the terms of $\{b_j\}$. In particular the lengths of the blocks which occur before the second block of length $c_1$ must appear in $\{b_j\}$, and must end right next to the number which refers to the second block of length $c_1$. 
+Since the two read distances are different we know there are two separate blocks of length $c_1$ in the common sequence, one which corresponds to $a_{m+1}$ and another which corresponds to $b_{l+1}$. Note that the block corresponding to $b_{l+1}$ is to the right of the block corresponding to $a_{m+1}$ because the read distance for $b_{l+1}$ is larger. Now because $\{a_i\}$ is self referential there exists some index $n$ such that $a_{m+n+1}$ is the element of $\{a_i\}$ which corresponds to the second block of length $c_1$. 
 
-Thus our sequence $\{b_j\}$ is  
+We claim that
 \begin{equation*}
-\cdots c_1 c_2 c_3 \cdots c_{n} c_1 c_2 \cdots c_n \cdots
+c_i = b_{l-n+i} \quad 1 \leq i \leq n
 \end{equation*}
-where the prefix ends at the second $c_1$. We now claim that the common sequence cycles through
+That is the subsequence $c_1, c_2, \ldots, c_{n}$ appears in $\{b_i\}$ such that the last term is next to the beginning of the common sequence. This is true because the length of the blocks of $\{c_i\}$ which occur before the second block of length $c_1$ must appear as terms of $\{b_i\}$ and must end next to the number which refers to the second block of length $c_1$.
+
+Thus our sequence $\{b_i\}$ is  
 \begin{equation*}
-c_1 c_2 \cdots c_n.
+\cdots c_1 c_2 \cdots c_{n} c_1 c_2 \cdots c_n \cdots
 \end{equation*}
-Since the read distance for $b_{1+k}$ is greater than the read distance for $a_{1+l}$, and the sequences are identical for subsequent indices by Lemma ~\ref{readdistformula}, we know that the read distance for $b_{i+k}$ is longer than the read distance for $a_{i+l}$ by exactly $x-y$. Thus $b_{k+i}$ corresponds to the same block as $a_{l+(x-y)+i}$. But $b_{k+i} = c_{i}$ and $a_{l+(x-y)+i}=c_{x-y+i}$ and so $c_{i} = c_{x-y+i}$ and so the common sequence cycles. Because the common sequence cycles and $\{b_j\}$ has the same cycle, but one which begins before the common sequence, $l$ could be made smaller and have the equivalence relation hold. This is contradicts our statement that $l$ is as small as possible. Therefore the first element of the shared sequence must have the same read distance in both sequences. 
+where the beginning of the common sequence is the second $c_1$. We now claim that the common sequence is just the subsequence
+\begin{equation*}
+c_1 c_2 \cdots c_n,
+\end{equation*}
+repeated an infinite number of times. 
+
+Since the read distance for $b_{l+1}$ is greater than the read distance for $a_{m+1}$, and the sequences are identical for subsequent indices, by Lemma ~\ref{readdistformula} we know that the read distance for $b_{l+i}$ is larger than the read distance for $a_{m+i}$ by exactly $y-x$. 
+
+Thus $b_{l+i}$ and $a_{m+(y-x)+i}$ correspond to the same block. But $b_{l+i} = c_{i}$ and $a_{m+(x-y)+i}=c_{x-y+i}$. Therefore $c_{i} = c_{y-x+i}$ and so the common sequence repeats. 
+
+Because the common sequence repeats and $\{b_i\}$ has the same cycle, but one which begins before the common sequence, $l$ could be made smaller and have the equivalence relation hold. This contradicts our statement that $l$ is as small as possible. Therefore the first element of the shared sequence must have the same read distance in both sequences. 
 \end{proof}
 
 \begin{corollary}
-If two self-referencing sequences are equivalent, then the read distance of their shared subsequence is the same everywhere.
+If two self-referencing sequences are generated over the same cycle and  then the read distance of their shared subsequence is the same everywhere.
 \end{corollary}
 
 \begin{proof}
 This follows from Theorem~\ref{thm:readfirst} and Lemma~\ref{readdistformula}.
 \end{proof}
 
-These conditions for equivalence lead us to make the following conjecture on a sufficient condition for nonequivalence.
-
-\begin{conj} If two sequences $\{a_i\}$ and $\{b_i\}$ are equivalent, then whenever two elements have the same read distances, other than for $i=1$,  the two elements are equal. 
-\end{conj}
-
-
-\begin{conj} Any sequence generated by a cycle $C$ is equivalent to any other sequence generated by the same cycle $C$.
-\end{conj}
-
-This conjecture is partly motivated by the fact that the property holds for self-referencing sequences from the generating cycle $C= (123)$. For generating cycles with larger numbers, we have been unable to verify or refute the conjecture.. However, in Section~\ref{density}, we show that for some generating cycles the starting number of a sequence does not affect the densities of each number, which provides some evidence for this conjecture.
+It is unclear to us whether all sequences generated by the same cycle are equivalent. This is certainly the case for $C=(123)$ and any two element cycles but we have been unable to generalize this to other three element or larger cycles. A key ingredient in establishing a counterexample would be more stringent necessary conditions for equivalence but it is unclear what these conditions should be or how to prove they are necessary. In order to establish that all sequences generated by the same cycle are in fact equivalent we would like to establish weaker or more generalizable sufficient conditions for equivalence, but based on our proof of Theorem ~\ref{eqsuff} it does not seem like weaker conditions will actually be sufficient. 
 
 \section{An Iterative Process}
 \label{iterativeprocess}

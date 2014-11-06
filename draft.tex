@@ -111,7 +111,7 @@ In Section~\ref{iterativeprocess}, we show that there is an alternate way of gen
 
 \emph{Written by Fermi Ma, edited by Perry Kleinhenz and Erik Waingarten}
 
-We claim that a self-referencing sequence is uniquely determined by the generating cycle $C$ and the starting number $a \in C$. We will prove this by showing that if we are given the first number of the sequence, there is only one way to extend the sequence. In order to do this, we formalize the idea of breaking up a sequence into blocks.
+We claim that a self-referencing sequence is uniquely determined by the generating cycle $C$ and the starting number $c \in C$. We will prove this by showing that if we are given the first number of the sequence, there is only one way to extend the sequence. In order to do this, we formalize the idea of breaking up a sequence into blocks.
 
 \begin{definition}
 A block $B$ is any maximal length subsequence of repeated numbers in a sequence. We denote by $B_i$ the $i$th block of the sequence.
@@ -126,12 +126,12 @@ the first block is $B_1 = \{1\}$, the second is $B_2 = \{3,3,3\}$, the third is 
 Clearly, a sequence can be specified by giving the numbers of the sequence individually, or by specifying all the blocks $B_i$. This is enough to make the following claim:
 
 \begin{proposition}
-A self-referencing sequence $\{a_i\}$ is uniquely specified by the generating cycle $C$ and the starting number $a \in C$. In other words, such an $\{a_i\}$ is guaranteed to exist and is unique.
+A self-referencing sequence $\{a_i\}$ is uniquely specified by the generating cycle $C$ and the starting number $c \in C$. In other words, such an $\{a_i\}$ is guaranteed to exist and is unique.
 \end{proposition}
 \begin{proof} 
-The proof is constructive. The self-referential property of the sequence implies that the contents of block $B_i$ are entirely determined by the values of $a$, $i$, and $s_i$. The value of $i$ determines which number is repeated throughout the block. For example, when $i = 1$, the number is the starting number $a$, and when $i = 2$, we use the number following the starting number in $C$, and so on for larger values of $i$. The value of $s_i$ simply dictates the length of block $B_i$.
+The proof is constructive. The self-referential property of the sequence implies that the contents of block $B_i$ are entirely determined by the values of $c$, $i$, and $a_i$. The value of $i$ determines which number is repeated throughout the block. For example, when $i = 1$, the number is the starting number $c$, and when $i = 2$, we use the number following the starting number in $C$, and so on for larger values of $i$. The value of $a_i$ simply dictates the length of block $B_i$.
 
-Thus, the sequence is uniquely given by first ``writing down" $B_1$, followed by $B_2$, followed by $B_3$, etc. One detail is that it remains to check that $s_i$ is known when $B_i$ is written down. However, writing down a block always involves writing down at least one element of the sequence, so the value of $s_i$ is always known when $B_i$ is written down. Note that there is an edge case where $s_i$ is not yet written down if the starting number is 1 and $i =2$. However, in this case, the value of $s_i$ is still known (as it is given by the rule) and thus $B_i$ can still be written down.
+Thus, the sequence is uniquely given by first ``writing down" $B_1$, followed by $B_2$, followed by $B_3$, etc. One detail is that it remains to check that $a_i$ is known when $B_i$ is written down. However, writing down a block always involves writing down at least one element of the sequence, so the value of $a_i$ is always known when $B_i$ is written down. Note that there is an edge case where $a_i$ is not yet written down if the starting number is 1 and $i =2$. However, in this case, the value of $a_i$ is still known (as it is given by the rule) and thus $B_i$ can still be written down.
 \end{proof}
 %
 %\begin{lemma}

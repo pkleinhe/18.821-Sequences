@@ -351,11 +351,11 @@ Here, we bold the numbers that form a prefix of $s(C,2)$. We note that $s^\infty
 We now consider two different forms of convergence. We know that $s^{(i)}$ in some sense approaches $s(C,a)$, as arbitrarily many elements at the beginning of the sequence will match up with the beginning of $s(C,a)$ as $i$ increases. However, if the tail of the sequence never entirely disappears, then there does not exist an $i$ where $s^{(i)}$ is exactly a prefix of $s(C,a)$. Thus, we formalize two types of convergence
 \begin{definition} We say that a sequence $s^{i}$ is weakly convergent to $s(C,a)$ if $s^\infty = s(C,a)$. We say that the sequence $s^{i}$ is strongly convergent if $s^{(i)}$ is a prefix of $s(C,a)$ for all $i \geq k$ for some $k$.
 \end{definition}
-It is unclear what conditions must be placed on the starting sequence in order to ensure strong convergence, although based on numerical simulation we make the following conjecture. 
-
-\begin{conj} Let $C = (1,2)$. A sequence $s^{(i)}$ is strongly convergent to $s(C, 2)$ if the starting sequence begins with a $2$ and contains no more than 3 elements. A sequence $s^{(i)}$ is strongly convergent to $s(C, 1)$ if the starting sequence begins with a $1$ and contains between 2 and 3 elements. A sequence $s^{(i)}$ is weakly convergent but not strongly convergent to $s(C, a)$ if the starting sequence begins with an $a \in \{1,2\}$ and contains 4 or more elements.
-\end{conj} 
-We make this conjecture on the basis on computer simulations which executes the iterative process to at least 20 iterations. More iterations were not completed because after this point the simulations began to take impractically long amounts of time to complete. 
+It is unclear what conditions must be placed on the starting sequence in order to ensure strong convergence.%, although based on numerical simulation we make the following conjecture. 
+%
+%\begin{conj} Let $C = (1,2)$. A sequence $s^{(i)}$ is weakly convergent but not strongly convergent to $s(C, a)$ if the starting sequence begins with an $a \in \{1,2\}$ and contains 4 or more elements.
+%\end{conj} 
+%We make this conjecture on the basis on computer simulations which executes the iterative process to at least 20 iterations. More iterations were not completed because after this point the simulations began to take impractically long amounts of time to complete. 
 
 \section{Substitution Rules}
 \label{substitutionrules}
@@ -502,8 +502,8 @@ Our work leaves a number of unresolved problems.
 
 \begin{itemize}
 \item In Section~\ref{equivalence}, we propose the idea that in some sense, the number that we start a sequence with does not matter. In other words, any sequence that uses a certain generating cycle is equivalent to any other sequence created by the same generating cycle.
-\item In the same section, we propose a condition for determining when two sequences are not equivalent. We conjecture that if two sequences have unequal numbers with the same read distances, then they are not equivalent. It seems from trying cases that this condition is sufficient, but we have been unable to prove it.
-\item In Section~\ref{iterativeprocess} we make a conjecture on when sequences are strongly and weakly convergent. We have not yet been able to investigate strong and weak convergence in great detail, as we have been unable to make precise mathematical statements about these types of convergence. Most of what we know about them comes from analyzing numerical data.
+%\item In the same section, we propose a condition for determining when two sequences are not equivalent. We conjecture that if two sequences have unequal numbers with the same read distances, then they are not equivalent. It seems from trying cases that this condition is sufficient, but we have been unable to prove it.
+\item In Section~\ref{iterativeprocess} we explored when sequences are strongly and weakly convergent. We have not yet been able to investigate strong and weak convergence in great detail, as we have been unable to make precise mathematical statements about these types of convergence. Most of what we know about them comes from analyzing numerical data.
 \item In Section~\ref{substitutionrules}, we look at substitution rules for certain ``nice" generating cycles of numbers, such as $(13)$ and $(24)$. These sets allow for substitution rules because they satisfy the trio of properties we outline in that section. However, we do not know that these are the only properties. We leave unresolved the question of determining precisely which sets allow for substitution rules and which ones ones do not. The major difficulty here seems to come in proving that a certain generating cycle does \emph{not} allow for substitution rules.
 \item In Section~\ref{density} we were able to compute the density of any sequence with generating cycle $(13)$, and we were able to give bounds on the density of any sequence with generating cycle $(12)$. However, we leave unresolved the question of what the density for $(12)$ actually is, or even if we can obtain tighter bounds.
 \end{itemize}

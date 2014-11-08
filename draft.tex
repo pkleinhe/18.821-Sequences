@@ -404,7 +404,7 @@ We can formulate a set of sufficient conditions for rules that generate the self
 Suppose $C$ is a generating cycle. Fix a length $l$ that is divisible by $|C|$ as well as some $a \in C$. Then for all possible substrings $x$ (using numbers in $C$) of length $l$, write down the unique rule, if it exists, of the form $x \to y$ that satisfies the following properties:
 \begin{enumerate}
 \item $x$ is the sequence of the block lengths of $y$.
-\item $y$ starts $a$
+\item $y$ starts with $a$
 \item $|y|$ is divisible by $l$.
 \end{enumerate}
 If any string $x$ does not have a corresponding $y$ that satisfies the above properties, then the rule set does not work. If we can write down a rule for each $x$, then successively applying these rules to a starting sequence length $l$ will give sequences that weakly converge to $s(C,a)$.

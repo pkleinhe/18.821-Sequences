@@ -503,7 +503,7 @@ Since $A = \{3,3\}$, $B = \{3,1\}$ and $C = \{1,1\}$, the fraction of 1's in the
 &\text{Fraction of 1's: }\texttt{0.397215284799705}\\
 &\text{Fraction of 3's: }\texttt{0.602784715200295}.
 \end{align*}
-We were able to support these calcuations with numerical simulations. We generated the $s((13),3)$ sequence up to 100,000 terms, and we found that the fraction of 1's was approximately $0.397$, and that the fraction of 3's was approximately 0.603.
+We were able to support these calcuations with numerical simulations. We generated the $s((13),3)$ sequence using the iterative method to 20 iterations, and we found that the fraction of 1's was approximately $0.397$, and that the fraction of 3's was approximately 0.603.
 
 It is difficult to fully generalize this procedure for all substitution rule sets, as we cannot prescribe a general form for all substitution rules. However, we believe that this technique should work whenever all the inputs to the substitution rules are the same length (in this case, the inputs were all length 2), and the outputs are all lengths that are multiples of the inputs. We do not know if the resulting equations will always give exactly 1 solution, as they did in this case.
 
@@ -539,14 +539,12 @@ Note that this would also imply the existence of a density. The previous claims 
 \section{Unresolved Problems}
 \emph{Written by Fermi Ma, edited by Perry Kleinhenz and Erik Waingarten}
 
-Our work leaves a number of unresolved problems. 
+If we had more time to work on this project, we would investigate the following unresolved questions.
 
 \begin{itemize}
-\item In Section~\ref{equivalence}, we propose the idea that in some sense, the number that we start a sequence with does not matter. In other words, any sequence that uses a certain generating cycle is equivalent to any other sequence created by the same generating cycle.
-%\item In the same section, we propose a condition for determining when two sequences are not equivalent. We conjecture that if two sequences have unequal numbers with the same read distances, then they are not equivalent. It seems from trying cases that this condition is sufficient, but we have been unable to prove it.
-\item In Section~\ref{iterativeprocess} we explored when sequences are strongly and weakly convergent. We have not yet been able to investigate strong and weak convergence in great detail, as we have been unable to make precise mathematical statements about these types of convergence. Most of what we know about them comes from analyzing numerical data.
-\item In Section~\ref{substitutionrules}, we look at substitution rules for certain ``nice" generating cycles of numbers, such as $(13)$ and $(24)$. These sets allow for substitution rules because they satisfy the trio of properties we outline in that section. However, we do not know that these are the only properties. We leave unresolved the question of determining precisely which sets allow for substitution rules and which ones ones do not. The major difficulty here seems to come in proving that a certain generating cycle does \emph{not} allow for substitution rules.
-\item In Section~\ref{densitycomputation} we were able to compute the density of any sequence with generating cycle $(13)$, and in Section ~\ref{densitybounds} were able to give bounds on the density of any sequence with generating cycle $(12)$. However, we leave unresolved the question of what the density for $(12)$ actually is, or if we can obtain tighter bounds.
+\item In Section~\ref{equivalence}, we considered the idea that perhaps the number that we start a sequence with does not matter. In other words, it may be true that any sequence that uses a certain generating cycle is equivalent to any other sequence that uses the same generating cycle. Alternatively, it may be the case that the same generating cycle may yield two sequences that are not equivalent. We would like to know which is actually true.
+\item In Section~\ref{substitutionrules}, we look at substitution rules for certain ``nice" generating cycles of numbers, such as $(13)$ and $(24)$. However, we leave unresolved the question of determining precisely which sets allow for substitution rules and which ones ones do not. The major difficulty here seems to come in proving that a certain generating cycle does \emph{not} allow for substitution rules. It seems very hard to come up with a set of substitution rules for $(12)$ and a proof for why this is impossible would be interesting.
+\item In Section~\ref{densitybounds} we were able to give certain bounds on the density, if it exists, for the original self-referential sequence of 1's and 2's. Given more time, we would want to see if we could extend our reasoning to the case of length 81 sequences, and perhaps even further. This would, of course, require a more clever way of proving our claims than the way we have used so far.
 \end{itemize}
 
 \section{Poetry}
@@ -564,7 +562,7 @@ To miss the answer, you'd be a fool.\\
 
 \noindent Now do the same for one and two,\\
 Look at the rule and now you ---\\
-Hold on, this doesn't work for numbers of different parity.\\
+hold on, this doesn't work for numbers of different parity.\\
 
 *if it exists
 
